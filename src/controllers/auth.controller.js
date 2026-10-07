@@ -100,6 +100,11 @@ async function loginUserController(req, res){
 }
 
 
+/**
+ * @name logoutUserController
+ * @description clear token from user cookie and add token in blacklist
+ * @access public
+ */
 async function logoutUserController(req, res) {
     // console.log(req)
 
@@ -114,6 +119,11 @@ async function logoutUserController(req, res) {
     res.status(200).json({
         message: "User logout successfully"
     })  
+}
+
+
+async function getMeController(req, res){
+    const user = await 
 }
 
 module.exports = {

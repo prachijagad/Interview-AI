@@ -2,6 +2,8 @@ const {Router} = require('express')  // Destructure and requiring the router, mo
 const authRouter = Router()   // There are more than one style to write the code but the main thing is the flow and what was the code actually
 
 const authController = require("../controllers/auth.controller");
+const authMiddleware = require("../middlewares/auth.middleware")
+
 
 /** 
    * @route POST /api/auth/register
@@ -32,6 +34,6 @@ authRouter.get("/logout", authController.logoutUserController)
  * @description get current login user details
  * @access private
  */
-authRouter.get("/get-me", authController.)
+authRouter.get("/get-me", authMiddleware.authUser, authController.)
 
 module.exports = authRouter;
